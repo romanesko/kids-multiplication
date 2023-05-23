@@ -1,4 +1,14 @@
-import {Button, Image, ImageBackground, StyleSheet, View} from 'react-native';
+import {
+    Button,
+    Dimensions,
+    Image,
+    ImageBackground,
+    Platform,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    View
+} from 'react-native';
 import {Table} from "./components/Table";
 import {Score} from "./components/Score";
 import React, {useEffect, useRef, useState} from "react";
@@ -67,7 +77,7 @@ export default function App() {
         async function loadResourcesAndDataAsync() {
             try {
                 const imageAssets = cacheImages([
-                    'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+                    require('./assets/splash.png'),
                     require('./assets/back.png'),
                 ]);
 
@@ -101,11 +111,15 @@ export default function App() {
     const mainRender = () => {
         if (!game.gameStarted) {
             return (
+                <ImageBackground source={require('./assets/splash.png')} style={styles.image}>
+
 
                     <LevelSelect onSelect={handleLevelClick}/>
+                </ImageBackground>
                 )
         }
         return (
+            <ImageBackground source={require('./assets/back.png')} style={styles.image}>
             <View style={styles.container}>
                 <View style={{...styles.block, minHeight: 60}}>
                     <Score counters={game.counters}/>
@@ -118,16 +132,20 @@ export default function App() {
                 </View>
                 <Toast config={toastConfig}/>
             </View>
+            </ImageBackground>
 
         );
     }
-
+    let ScreenHeight = Dimensions.get("window").height;
     return (
-        <View style={styles.containerWrapper}>
-            <ImageBackground source={require('./assets/back.png')} style={styles.image}>
-                {mainRender()}
-            </ImageBackground>
-        </View>)
+        <ScrollView scrollEnabled={false} style={styles.containerWrapper}>
+            <View style={{height:ScreenHeight}}>
+
+                    {mainRender()}
+
+            </View>
+        </ScrollView>
+    )
 
 }
 
@@ -138,12 +156,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#15131B',
     },
     block: {
-        // borderColor:'white',
-        // borderWidth:1
+        width:100+'%',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     container: {
-        marginTop: 40,
-        marginBottom: 60,
+        marginTop: Platform.OS === 'ios' ? 40 : 20,
+        marginBottom: Platform.OS === 'ios' ? 60 : 40,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',

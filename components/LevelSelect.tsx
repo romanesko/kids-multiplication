@@ -14,7 +14,7 @@ export const LevelSelect = (props) => {
     return (
         <View style={styles.container}>
         <View style={{marginBottom: 40, width:'100%'}}>
-            <Text style={{textAlign: "center", fontSize: 20, marginBottom: 20, color:'white'}}>LEVEL:</Text>
+            <Text style={styles.levelTitle}>LEVEL:</Text>
             {[[4, 5, 6], [7, 8, 9]].map((r,i)=>{
                 return (<View key={i} style={{flexDirection: "row",justifyContent: "space-evenly", width: "100%"}}>
                     {r.map((v, i) => {
@@ -49,4 +49,15 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-end',
-    },})
+    },
+    levelTitle: {
+        textAlign: "center", fontSize: 20, marginBottom: 20, color:'white',
+        textShadowRadius: 1,
+        textShadowColor: 'black',
+        textShadowOffset: {width: 1, height: 1}
+    }
+
+    }
+
+
+)

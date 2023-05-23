@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
     // backgroundColor:'#ffffff11'
   },
   cell: {
-    width: 35,
-    height: 35,
+    width: 37,
+    height: 37,
     backgroundColor: 'rgba(255,255,255,0.80)',
     alignItems: 'center',
     justifyContent: 'center',

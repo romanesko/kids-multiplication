@@ -50,13 +50,16 @@ export const Variants = (props) => {
 const styles = StyleSheet.create({
 
     variantsBlock: {
-        width: '90%',
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 20,
+        paddingHorizontal: 20,
     },
     variant: {
-        marginHorizontal: 4, width: 80, display: "flex", alignItems: "center", borderRadius: 10,
+        // marginHorizontal: 8,
+        width: 100,
+        display: "flex", alignItems: "center", borderRadius: 10,
         paddingVertical: 10,
         backgroundColor: '#FFFFFFCC'
     },
