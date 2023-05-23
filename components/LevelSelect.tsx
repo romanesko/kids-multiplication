@@ -13,10 +13,10 @@ export const LevelSelect = (props) => {
 
     return (
         <View style={styles.container}>
-        <View style={{marginBottom: 40}}>
+        <View style={{marginBottom: 40, width:'100%'}}>
             <Text style={{textAlign: "center", fontSize: 20, marginBottom: 20, color:'white'}}>LEVEL:</Text>
-            {[[4, 5, 6], [7, 8, 9]].map(r=>{
-                return (<View style={{flexDirection: "row",justifyContent: "space-evenly", width: "90%"}}>
+            {[[4, 5, 6], [7, 8, 9]].map((r,i)=>{
+                return (<View key={i} style={{flexDirection: "row",justifyContent: "space-evenly", width: "100%"}}>
                     {r.map((v, i) => {
                 return (<TouchableHighlight key={i}
                                             style={{
@@ -37,7 +37,6 @@ export const LevelSelect = (props) => {
                     </View>
                     )})}
         </View>
-        <View><Text>ds</Text></View>
         </View>
     )
 }

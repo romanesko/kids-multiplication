@@ -47,7 +47,7 @@ export default function App() {
         if (game.checkAnswer(answer)) {
             Toast.show({...toastSettings, ...{type: 'success', text1: '👍'}});
         } else {
-            Toast.show({...toastSettings, ...{type: 'error', text1: '😵‍💫'}});
+            Toast.show({...toastSettings, ...{type: 'error', text1: ':('}});
         }
         setTimeout(next, 500)
     }
