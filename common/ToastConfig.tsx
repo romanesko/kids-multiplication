@@ -41,5 +41,5 @@ export const toastConfig = {
 
 export const toastSettings = {
   visibilityTime: 900,
-  topOffset: 50
+  topOffset: 40
 }

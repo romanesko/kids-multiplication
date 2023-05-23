@@ -33,7 +33,6 @@ export class Cell {
 
 export const Table = (props: ITableProps) => {
 
-
   const [nums,setNums] = useState([])
 
   useEffect(()=>{
@@ -55,11 +54,11 @@ export const Table = (props: ITableProps) => {
     if (props.quest!=null){
 
       if (props.quest.x == cell.x || props.quest.y == cell.y) {
-        extraStyle = {backgroundColor: '#ff990544'}
+        extraStyle = styles.stripe
       }
 
       if (props.quest.equals(cell)) {
-        extraStyle = {backgroundColor: '#ff9905dd'}
+        extraStyle = styles.selectedCell
       }
     }
 
@@ -113,12 +112,13 @@ const styles = StyleSheet.create({
   table:{
     borderColor: 'black',
     borderRightWidth: 1,
-    borderBottomWidth:1
+    borderBottomWidth:1,
+    // backgroundColor:'#ffffff11'
   },
   cell: {
     width: 35,
     height: 35,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255,255,255,0.80)',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
@@ -126,6 +126,13 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderBottomWidth:0
   },
+  stripe: {
+    backgroundColor: 'rgba(190,172,143,0.80)'
+  },
+  selectedCell: {
+    backgroundColor: 'rgba(255,151,0,0.80)'
+  },
+
   cellText: {
     fontSize: 20
   }
