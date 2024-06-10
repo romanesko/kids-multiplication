@@ -15,14 +15,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "ru.bobrkurwa.kidsmultiply",
+      "buildNumber": "4"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#15131B"
       },
-      "package": "com.romanesko.kidsmultiply"
+      "package": "ru.bobrkurwa.kidsmultiply"
     },
     "web": {
       "favicon": "./assets/favicon.png"
